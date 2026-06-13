@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lorenz-da-lab"
+version = "0.1.0"
+description = "Lorenz model을 이용한 자료동화, TLM, adjoint, 4D-Var, AI model 개인 실습 프로젝트"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Sanggyu Jeon" }
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "pandas",
+    "pyyaml",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+notebook = [
+    "jupyterlab",
+    "notebook",
+    "ipykernel",
+]
+
+dev = [
+    "pytest",
+    "black",
+    "ruff",
+]
+
+ai = [
+    "scikit-learn",
+    "torch",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+ignore = []

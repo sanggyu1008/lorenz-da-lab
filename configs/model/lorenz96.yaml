@@ -1,0 +1,27 @@
+# Lorenz-96 기본 모델 설정
+#
+# 08번 실습(Lorenz-96 EnKF)에서 사용하는 모델/적분 기본값을 기록한다.
+# 노트북은 직접 값을 정의하지만, script 기반 반복 실험을 할 때 이 파일을 참고할 수 있다.
+
+model:
+  name: lorenz96
+
+  parameters:
+    F: 8.0      # forcing (8이면 chaotic)
+    K: 40       # 변수(격자점) 개수
+
+numerics:
+  method: rk4   # Lorenz-96는 비선형성이 강해 RK4 사용
+  dt: 0.025
+  tmax: 25.0
+
+initial_condition:
+  # F * ones에 한 변수만 작은 perturbation을 준 뒤 spinup으로 attractor에 진입
+  base: 8.0
+  perturb_index: 0
+  perturb_size: 0.01
+
+output:
+  save_trajectory: true
+  trajectory_path: outputs/trajectories/08_lorenz96_truth.npy
+  figure_dir: outputs/figures
