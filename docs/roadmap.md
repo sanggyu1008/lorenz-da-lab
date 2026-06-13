@@ -243,12 +243,41 @@ src/lorenz_da/assimilation/enkf.py
 
 ---
 
-## Stage 8. Lorenz-96 EnKF (localization, inflation)
+## Stage 8. Ensemble Optimal Interpolation (EnOI)
 
 노트북:
 
 ```text
-notebooks/08_lorenz96_enkf.ipynb
+notebooks/08_lorenz63_enoi_euler.ipynb
+```
+
+목표:
+
+1. 긴 free run에서 정적 앙상블(기후학적 변동) 추출
+2. 고정된 앙상블 공분산 구성
+3. 단일 결정론적 update 수행
+4. EnKF(시간 변동 앙상블)와 EnOI(고정 앙상블) 비교
+
+예상 source module:
+
+```text
+src/lorenz_da/assimilation/enoi.py
+```
+
+핵심 개념:
+
+- climatological ensemble
+- stationary covariance
+- EnKF와 EnOI의 비용/정확도 trade-off
+
+---
+
+## Stage 9. Lorenz-96 EnKF (localization, inflation)
+
+노트북:
+
+```text
+notebooks/09_lorenz96_enkf.ipynb
 ```
 
 목표:
@@ -278,35 +307,6 @@ src/lorenz_da/assimilation/enkf.py
 
 ---
 
-## Stage 9. Ensemble Optimal Interpolation (EnOI)
-
-노트북:
-
-```text
-notebooks/09_lorenz63_enoi_euler.ipynb
-```
-
-목표:
-
-1. 긴 free run에서 정적 앙상블(기후학적 변동) 추출
-2. 고정된 앙상블 공분산 구성
-3. 단일 결정론적 update 수행
-4. EnKF(시간 변동 앙상블)와 EnOI(고정 앙상블) 비교
-
-예상 source module:
-
-```text
-src/lorenz_da/assimilation/enoi.py
-```
-
-핵심 개념:
-
-- climatological ensemble
-- stationary covariance
-- EnKF와 EnOI의 비용/정확도 trade-off
-
----
-
 ## 개발 원칙
 
 이 프로젝트에서는 다음 원칙을 따른다.
@@ -333,8 +333,8 @@ src/lorenz_da/assimilation/enoi.py
 6순위: EnKF 구현 및 3D-Var와 비교 (07)             (완료)
 7순위: 4D-Var 구현 (05)                            (완료)
 8순위: AI surrogate model 실험 (06)               (완료)
-9순위: Lorenz-96 EnKF, localization/inflation (08) (완료)
-10순위: EnOI 구현 (09)                             (완료)
+9순위: Lorenz-96 EnKF, localization/inflation (09) (완료)
+10순위: EnOI 구현 (08)                             (완료)
 ```
 
 현재 Lorenz DA Lab의 핵심 실습(01~09)은 모두 완성되었다.

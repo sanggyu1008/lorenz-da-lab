@@ -26,8 +26,8 @@ Lorenz DA Lab은 Lorenz model을 이용해 수치모델, 자료동화, tangent l
 8. 4D-Var cost function과 gradient 계산 구현
 9. AI surrogate model 또는 AI correction model 실험
 10. Ensemble Kalman Filter(EnKF) 구현 및 3D-Var와 비교
-11. Lorenz-96 EnKF에서 localization과 inflation 실험
-12. Ensemble Optimal Interpolation(EnOI) 구현
+11. Ensemble Optimal Interpolation(EnOI) 구현
+12. Lorenz-96 EnKF에서 localization과 inflation 실험
 
 ---
 
@@ -43,8 +43,8 @@ Lorenz DA Lab은 Lorenz model을 이용해 수치모델, 자료동화, tangent l
 05. 4D-Var
 06. AI surrogate / AI correction model
 07. Ensemble Kalman Filter (EnKF)
-08. Lorenz-96 EnKF (localization, inflation)
-09. Ensemble Optimal Interpolation (EnOI)
+08. Ensemble Optimal Interpolation (EnOI)
+09. Lorenz-96 EnKF (localization, inflation)
 ```
 
 > 변분(variational) 계열은 02 → 03 → 04 → 05로, 앙상블 계열은 02 → 07 → 08 → 09로 이어집니다.
@@ -60,8 +60,8 @@ notebooks/
 ├── 05_lorenz63_4dvar_euler.ipynb
 ├── 06_lorenz63_ai_surrogate.ipynb
 ├── 07_lorenz63_enkf_euler.ipynb
-├── 08_lorenz96_enkf.ipynb
-└── 09_lorenz63_enoi_euler.ipynb
+├── 08_lorenz63_enoi_euler.ipynb
+└── 09_lorenz96_enkf.ipynb
 ```
 
 ---
@@ -169,8 +169,8 @@ notebooks/
 ├── 05_lorenz63_4dvar_euler.ipynb     # 4D-Var (strong-constraint, L-BFGS)
 ├── 06_lorenz63_ai_surrogate.ipynb    # AI surrogate (numpy MLP + Adam)
 ├── 07_lorenz63_enkf_euler.ipynb      # Ensemble Kalman Filter (L63, stochastic)
-├── 08_lorenz96_enkf.ipynb            # Lorenz-96 EnKF (localization, inflation)
-└── 09_lorenz63_enoi_euler.ipynb      # Ensemble Optimal Interpolation (EnOI)
+├── 08_lorenz63_enoi_euler.ipynb      # Ensemble Optimal Interpolation (EnOI)
+└── 09_lorenz96_enkf.ipynb            # Lorenz-96 EnKF (localization, inflation)
 ```
 
 첫 번째 노트북(`01`)의 목표는 다음과 같습니다.
